@@ -9,7 +9,7 @@ import "swiper/css";
 
 import { Banner } from "@/types/bannerTypes";
 
-/* ================================
+/* ==============================
    TYPES
 ================================ */
 interface HeroSectionProps {
