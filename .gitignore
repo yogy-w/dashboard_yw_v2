@@ -43,3 +43,5 @@ next-env.d.ts
 .idea
 .vscode
 
+# User uploads (gambar banner, artikel, dll)
+/uploads
