@@ -9,7 +9,7 @@ import "swiper/css";
 
 import { Banner } from "@/types/bannerTypes";
 
-/* ==============================
+/* ============================== 
    TYPES
 ================================ */
 interface HeroSectionProps {
@@ -69,7 +69,7 @@ function HeroBanner({ banners }: { banners: Banner[] }) {
           banners.map((banner) => (
             <SwiperSlide key={banner.id}>
               <Image
-                src={banner.Media?.url || "/images/demos/default.png"}
+                src={banner.media?.url || "/images/demos/default.png"}
                 alt={banner.title}
                 width={800}
                 height={500}

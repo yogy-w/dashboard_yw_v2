@@ -1,5 +1,4 @@
-// src/types/bannerTypes.ts
-
+//bannerTypes.ts
 export type Banner = {
   id: string;
   title: string;
@@ -11,18 +10,10 @@ export type Banner = {
   created_at?: string;
   updated_at?: string; 
 
-  Media?:{  id: string;
-  filename: string | null;
-  url: string | null;
-}| null;
-};
-
-export type BannerListResponse = {
-  success: boolean;
-  data: Banner[];
-};
-
-export type BannerSingleResponse = {
-  success: boolean;
-  data: Banner;
+  // UBAH DARI 'Media' MENJADI 'media'
+  media?: {  
+    id: string;
+    filename: string | null;
+    url: string | null;
+  } | null;
 };

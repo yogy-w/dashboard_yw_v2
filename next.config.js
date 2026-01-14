@@ -3,7 +3,6 @@ const silenceDeprecations = [
   "mixed-decls",
   "color-functions",
   "global-builtin",
-  // Suppress legacy JS API deprecation warning
   "legacy-js-api",
 ];
 
@@ -17,15 +16,23 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    // --- IZIN GUDANG BACKEND ---
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '4000',
+        pathname: '/uploads/**',
+      },
+    ],
+    // ---------------------------
   },
   webpack: config => {
-    // Handle asset files like fonts and images
     config.module.rules.push({
       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
       type: "asset",
     });
 
-    // Patch sass-loader to silence deprecation warnings
     config.module.rules.forEach(rule => {
       if (Array.isArray(rule.oneOf)) {
         rule.oneOf.forEach(one => {
