@@ -51,22 +51,25 @@ function HeroTitle() {
   return (
     <h1 className="display-6 fw-semibold mb-3 lh-base">
       MASJID ABU UBAIDAH BIN AL JARRAH{" "}
-      <span className="text-success">Velzon</span>
+      <span className="text-success"></span>
     </h1>
   );
 }
 
 function HeroBanner({ banners }: { banners: Banner[] }) {
+  // 1. Filter: Hanya ambil banner yang punya data media dan URL
+  const validBanners = banners.filter(b => b.media && b.media.url);
+
   return (
     <Swiper
       modules={[Autoplay]}
       autoplay={{ delay: 2000, disableOnInteraction: false }}
-      loop
+      loop={validBanners.length > 1} // Loop hanya jika gambar lebih dari satu
       className="carousel slide carousel-fade"
     >
       <div className="carousel-inner shadow-lg p-2 bg-white rounded">
-        {banners.length > 0 ? (
-          banners.map((banner) => (
+        {validBanners.length > 0 ? (
+          validBanners.map((banner) => (
             <SwiperSlide key={banner.id}>
               <Image
                 src={banner.media?.url || "/images/demos/default.png"}
