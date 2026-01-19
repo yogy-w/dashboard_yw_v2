@@ -18,6 +18,7 @@ import { Banner } from "@/types/bannerTypes";
 
 // components
 import HeroSection from "@/components/landing/HeroSection";
+import PrayerTimeSection from "@/components/landing/PrayerTimeSection";
 
 // const LandingPage = () => {
 //   const [isAnnual, setIsAnnual] = useState(false);
@@ -56,6 +57,7 @@ export default function LandingPage() {
   return (
     <>
      {/* ================= HERO SECTION ================= */}
+     <PrayerTimeSection />
       <HeroSection banners={banners} />
 
       {/* =================================================
