@@ -21,16 +21,14 @@ interface HeroSectionProps {
 ================================ */
 export default function HeroSection({ banners }: HeroSectionProps) {
   return (
-    <section className="section pb-0 hero-section" id="hero">
+    <section className="section py-0 hero-section" id="hero">
       <HeroBackground />
 
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-sm-10">
-            <div className="text-center mt-lg-5 pt-5">
-              <HeroTitle />
+            <div className="text-center">
               <HeroBanner banners={banners} />
-              <HeroCTA />
             </div>
           </div>
         </div>
@@ -45,15 +43,6 @@ export default function HeroSection({ banners }: HeroSectionProps) {
 
 function HeroBackground() {
   return <div className="bg-overlay bg-overlay-pattern"></div>;
-}
-
-function HeroTitle() {
-  return (
-    <h1 className="display-6 fw-semibold mb-3 lh-base">
-      MASJID ABU UBAIDAH BIN AL JARRAH{" "}
-      <span className="text-success"></span>
-    </h1>
-  );
 }
 
 function HeroBanner({ banners }: { banners: Banner[] }) {

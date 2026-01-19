@@ -30,9 +30,9 @@ export default function BannerSlider({ banners }: { banners: Banner[] }) {
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
             <div className="relative w-full h-[420px]">
-              {banner.Media?.url && (
+              {banner.media?.url && (
                 <Image
-                  src={banner.Media.url}
+                  src={banner.media.url}
                   alt={banner.title}
                   fill
                   priority

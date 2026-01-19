@@ -105,7 +105,9 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
       ></div>
 
       {/* ISI HALAMAN */}
-      {children}
+      <div style={{ paddingTop: "10px" }}>
+        {children}
+      </div>
 
       {/* FOOTER DIPINDAH KE SINI */}
       <footer className="custom-footer bg-dark py-5 position-relative">
