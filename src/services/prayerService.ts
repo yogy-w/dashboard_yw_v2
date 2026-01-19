@@ -1,7 +1,7 @@
 // src/services/prayerService.ts
 
 export const getPrayerTimes = async (city: string, country: string) => {
-  const tune = "0,3,0,4,3,3,2,0"; // Label baru kamu
+  const tune = "0,3,0,4,3,3,0,2"; // Label baru kamu
 
   // Tambahkan timestamp agar URL selalu dianggap baru oleh browser/server
   const timestamp = new Date().getTime(); 
