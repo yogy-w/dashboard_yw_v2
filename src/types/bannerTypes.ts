@@ -17,3 +17,9 @@ export type Banner = {
     url: string | null;
   } | null;
 };
+
+export interface BannerListResponse {
+  success: boolean;
+  data: Banner[];
+  message?: string;
+}
