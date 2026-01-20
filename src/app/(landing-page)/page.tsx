@@ -13,6 +13,7 @@ import { Banner } from "@/types/bannerTypes";
 import HeroSection from "@/components/landing/HeroSection";
 import PrayerTimeSection from "@/components/landing/PrayerTimeSection";
 import KajianSection from "@/components/landing/KajianSection";
+import DonationSection from "src/components/landing/DonationSection";
   
 export default function LandingPage() {
   //---STATE--
@@ -65,6 +66,8 @@ export default function LandingPage() {
         <HeroSection banners={banners} />
       </section>
       <KajianSection />
+      <DonationSection />
+      
       {/* Seksi lainnya... */}
       {/*
         <TrustedClients />

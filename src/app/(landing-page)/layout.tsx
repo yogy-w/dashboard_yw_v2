@@ -25,25 +25,29 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="layout-wrapper landing">
-      {/* NAVBAR */}
+      {/* NAVBAR: Menggunakan fixed-top agar selalu menempel di atas */}
       <nav
         className={`navbar navbar-expand-lg navbar-landing fixed-top ${
-          isNavbarShrunk ? "is-sticky" : ""
+          isNavbarShrunk ? "is-sticky bg-white shadow-md py-2" : "py-3 bg-transparent"
         }`}
         id="navbar"
+        style={{ transition: "all 0.3s ease" }}
       >
         <div className="container">
-          <Link href="/">
+          {/* 1. LOGO */}
+          <Link href="/" className="navbar-brand">
             <Image
               src="/images/logo-dark.png"
-              alt="Velzon dark logo"
-              height={17}
-              width={85}
+              alt="Logo Masjid"
+              height={30}
+              width={100}
+              className="card-logo card-logo-dark"
             />
           </Link>
 
+          {/* BUTTON MOBILE (HAMBURGER) */}
           <button
-            className="navbar-toggler py-0 fs-20 text-body"
+            className="navbar-toggler py-0 fs-20 text-body border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -51,46 +55,38 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i className="mdi mdi-menu"></i>
+            <i className="ri-menu-line"></i>
           </button>
 
+          {/* 2. MENU NAVIGASI (Diletakkan di Tengah) */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+            <ul className="navbar-nav mx-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <Link href="#hero" className="nav-link active">
-                  Home
-                </Link>
+                <Link href="/" className="nav-link fw-semibold">Home</Link>
               </li>
               <li className="nav-item">
-                <Link href="#services" className="nav-link">
-                  Profile
-                </Link>
+                <Link href="/profile" className="nav-link fw-semibold">Profile</Link>
               </li>
               <li className="nav-item">
-                <Link href="#features" className="nav-link">
-                  Kegiatan
-                </Link>
+                <Link href="/kegiatan" className="nav-link fw-semibold">Kegiatan</Link>
               </li>
               <li className="nav-item">
-                <Link href="#plans" className="nav-link">
-                  Laporan Keuangan
-                </Link>
+                <Link href="/laporan-keuangan" className="nav-link fw-semibold text-success">Laporan Keuangan</Link>
               </li>
               <li className="nav-item">
-                <Link href="#contact" className="nav-link">
-                  Contact
-                </Link>
+                <Link href="/contact" className="nav-link fw-semibold">Contact</Link>
               </li>
             </ul>
 
-            <div>
+            {/* 3. TOMBOL AUTH (Diletakkan di Kanan) */}
+            <div className="d-flex align-items-center gap-2">
               <Link
-                href="/authinner/signin/basic"
-                className="btn btn-link fw-medium text-decoration-none text-body"
+                href="/login"
+                className="btn btn-link fw-bold text-decoration-none text-dark p-0 me-2"
               >
                 Sign in
               </Link>
-              <Link href="/authinner/signup/basic" className="btn btn-primary">
+              <Link href="/register" className="btn btn-primary rounded-pill px-4 shadow-sm">
                 Sign Up
               </Link>
             </div>
@@ -98,22 +94,30 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
         </div>
       </nav>
 
+      {/* OVERLAY UNTUK MOBILE MENU */}
       <div
         className="vertical-overlay"
         data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent.show"
       ></div>
 
-      {/* ISI HALAMAN */}
-      <div style={{ paddingTop: "10px" }}>
+      {/* ISI HALAMAN: 
+          Diberi margin-top atau padding-top agar konten (seperti nama masjid) 
+          tidak tertutup oleh navbar yang bersifat fixed-top.
+      */}
+      <main style={{ marginTop: "85px" }}>
         {children}
-      </div>
+      </main>
 
-      {/* FOOTER DIPINDAH KE SINI */}
-      <footer className="custom-footer bg-dark py-5 position-relative">
+      {/* FOOTER */}
+      <footer className="custom-footer bg-dark py-5 mt-5">
         <div className="container">
           <div className="row">
-            {/* ... copy bagian footer kamu di sini persis seperti sebelumnya ... */}
+            <div className="col-lg-12 text-center">
+               <p className="text-white-50 mb-0">
+                © {new Date().getFullYear()} Masjid Abu Ubaidah Bin Al Jarrah. Port API: 4000.
+               </p>
+            </div>
           </div>
         </div>
       </footer>
