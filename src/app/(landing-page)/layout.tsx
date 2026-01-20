@@ -37,10 +37,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           {/* 1. LOGO */}
           <Link href="/" className="navbar-brand">
             <Image
-              src="/images/logo-dark.png"
+              src="/images/logomasjid4.png"
               alt="Logo Masjid"
-              height={30}
-              width={100}
+              height={70}
+              width={250}
+              style={{ marginTop: "-10px" }}
               className="card-logo card-logo-dark"
             />
           </Link>
@@ -71,12 +72,24 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                 <Link href="/kegiatan" className="nav-link fw-semibold">Kegiatan</Link>
               </li>
               <li className="nav-item">
-                <Link href="/laporan-keuangan" className="nav-link fw-semibold text-success">Laporan Keuangan</Link>
+                <Link href="/laporan-keuangan" className="nav-link fw-semibold">Laporan Keuangan</Link>
               </li>
               <li className="nav-item">
                 <Link href="/contact" className="nav-link fw-semibold">Contact</Link>
               </li>
             </ul>
+
+          <style jsx>{`
+          .custom-nav-link {
+            font-size: 20px !important; /* Ukuran tulisan lebih besar sedikit */
+            font-weight: 600;           /* Ketebalan tulisan */
+            padding: 10px 15px;         /* Jarak antar menu agar tidak terlalu rapat */
+            transition: color 0.3s ease;
+            }
+          .custom-nav-link:hover {
+              color: #0ab39c !important; /* Warna hijau saat kursor di atas menu */
+            }
+        ` }</style>
 
             {/* 3. TOMBOL AUTH (Diletakkan di Kanan) */}
             <div className="d-flex align-items-center gap-2">
