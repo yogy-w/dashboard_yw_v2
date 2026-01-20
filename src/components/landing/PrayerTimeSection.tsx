@@ -26,9 +26,15 @@ export default function PrayerTimeSection() {
   ];
 
   return (
-    // Gunakan py-3 dan mb-0 untuk memastikan mepet dengan HeroSection di bawahnya
-    <section className="py-3 mb-0" id="prayer-times">
+    <section className="py-0 mb-0 prayer-section-bg" id="prayer-times">
       <div className="container">
+        {/* Badge Header */}
+        <div className="text-center mb-3">
+          <span className="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill small fw-bold">
+            <i className="ri-time-line me-1"></i> JADWAL SHALAT HARI INI
+          </span>
+        </div>
+
         <div className="row g-2 justify-content-center">
           {loading ? (
             <div className="text-center p-3">
@@ -37,19 +43,24 @@ export default function PrayerTimeSection() {
           ) : times ? (
             prayerList.map((p) => (
               <div className="col-6 col-md-2" key={p.name}>
-                <div className="card border-0 rounded-4 shadow-sm text-center prayer-card h-100 bg-white">
-                  <div className="card-body p-3">
-                    <div className="d-flex align-items-center justify-content-center mb-2">
-                      <div className="avatar-xs">
-                        <div className="avatar-title bg-success-subtle text-success rounded-circle fs-5">
-                          <i className={p.icon}></i>
-                        </div>
+                <div className="card border-0 rounded-4 shadow-sm text-center prayer-card h-100">
+                  <div className="card-body p-3 d-flex flex-column align-items-center justify-content-center">
+                    
+                    {/* Icon Container */}
+                    <div className="avatar-sm mb-2">
+                      <div className="avatar-title  bg-opacity-100 text-white rounded-circle fs-4">
+                        <i className={p.icon}></i>
                       </div>
                     </div>
-                    <h6 className="text-uppercase fw-bold text-muted mb-1" style={{ fontSize: '0.7rem', letterSpacing: '1px' }}>
+
+                    {/* Label (Subuh, Dzuhur, dsb) */}
+                    <h6 className="text-uppercase fw-bold prayer-label mb-1">
                       {p.label}
                     </h6>
-                    <h4 className="fw-bold mb-0 text-dark">{times[p.name]}</h4>
+
+                    {/* Jam Shalat */}
+                    <h4 className="fw-bold mb-0 prayer-time">{times[p.name]}</h4>
+                    
                   </div>
                 </div>
               </div>
@@ -61,15 +72,50 @@ export default function PrayerTimeSection() {
       </div>
 
       <style jsx>{`
-        .prayer-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .prayer-section-bg {
+          background-color: #f8fafc;
+          border-bottom: 1px solid #edf2f7;
         }
+
+        .prayer-card {
+          transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+          cursor: pointer;
+          border: none !important;
+          background: #2E7D3D !important; /* Hijau Utama */
+        }
+
+        /* PERBAIKAN WARNA TULISAN JADI PUTIH */
+        .prayer-label {
+          color: rgba(255, 255, 255, 0.8) !important;
+          font-size: 0.7rem;
+          letter-spacing: 1px;
+        }
+
+        .prayer-time {
+          color: #ffffff !important;
+          font-size: 1.25rem;
+        }
+
+        .avatar-title {
+          width: 45px;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* HOVER EFFECT */
         .prayer-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-          border: 1px solid #0ab39c !important;
+          background: #1B4332 !important; /* Hijau lebih gelap saat hover */
+          box-shadow: 0 10px 20px rgba(46, 125, 61, 0.2) !important;
+        }
+
+        .prayer-card:hover .avatar-title {
+          background: #ffffffff !important;
+          color: #1B4332 !important;
         }
       `}</style>
     </section>
   );
-}
+} 
