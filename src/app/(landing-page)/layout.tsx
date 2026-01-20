@@ -24,7 +24,9 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="layout-wrapper landing">
+    // min-vh-100: Memastikan tinggi minimal adalah 100% layar
+    // d-flex flex-column: Mengaktifkan mode kolom flex
+    <div className="min-vh-100 d-flex flex-column">
       {/* NAVBAR: Menggunakan fixed-top agar selalu menempel di atas */}
       <nav
         className={`navbar navbar-expand-lg navbar-landing fixed-top ${
@@ -118,7 +120,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           Diberi margin-top atau padding-top agar konten (seperti nama masjid) 
           tidak tertutup oleh navbar yang bersifat fixed-top.
       */}
-      <main style={{ marginTop: "85px" }}>
+      <main className="flex-grow-1" style={{ marginTop: "85px" }}>
         {children}
       </main>
 
@@ -128,7 +130,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="row">
             <div className="col-lg-12 text-center">
                <p className="text-white-50 mb-0">
-                © {new Date().getFullYear()} Masjid Abu Ubaidah Bin Al Jarrah. Port API: 4000.
+                © {new Date().getFullYear()} Masjid Abu Ubaidah Bin Al Jarrah.
                </p>
             </div>
           </div>
