@@ -12,7 +12,7 @@ import { Banner } from "@/types/bannerTypes";
 // components
 import HeroSection from "@/components/landing/HeroSection";
 import PrayerTimeSection from "@/components/landing/PrayerTimeSection";
-
+import KajianSection from "@/components/landing/KajianSection";
   
 export default function LandingPage() {
   //---STATE--
@@ -64,7 +64,7 @@ export default function LandingPage() {
       <section className="pb-5">
         <HeroSection banners={banners} />
       </section>
-      
+      <KajianSection />
       {/* Seksi lainnya... */}
       {/*
         <TrustedClients />
