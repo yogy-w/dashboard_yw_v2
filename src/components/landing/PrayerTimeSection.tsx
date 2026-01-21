@@ -81,7 +81,7 @@ export default function PrayerTimeSection() {
           transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
           cursor: pointer;
           border: none !important;
-          background: #2E7D3D !important; /* Hijau Utama */
+          background: #064e3b !important; 
         }
 
         /* PERBAIKAN WARNA TULISAN JADI PUTIH */
@@ -107,13 +107,13 @@ export default function PrayerTimeSection() {
         /* HOVER EFFECT */
         .prayer-card:hover {
           transform: translateY(-5px);
-          background: #1B4332 !important; /* Hijau lebih gelap saat hover */
+          background: #064e3b !important; /* Hijau lebih gelap saat hover */
           box-shadow: 0 10px 20px rgba(46, 125, 61, 0.2) !important;
         }
 
         .prayer-card:hover .avatar-title {
           background: #ffffffff !important;
-          color: #1B4332 !important;
+          color: #064e3b !important;
         }
       `}</style>
     </section>
