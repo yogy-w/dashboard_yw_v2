@@ -8,8 +8,8 @@ export default function ContactPage() {
       {/* 1. HERO SECTION */}
       <section className="py-5" style={{ backgroundColor: '#064e3b', paddingTop: '140px !important' }}>
         <div className="container py-4 text-center text-white">
-          <h1 className="fw-bold display-5">Hubungi Kami</h1>
-          <p className="opacity-75 lead">Layanan Informasi & Silaturahmi Masjid Abu Ubaidah</p>
+          <h1 className="fw-bold display-4 text-white uppercase ls-lg">Hubungi Kami</h1>
+          <p className="lead text-white-50">Layanan Informasi & Silaturahmi Masjid Abu Ubaidah</p>
           <div className="bg-warning mx-auto mt-3" style={{ width: '80px', height: '4px', borderRadius: '2px' }}></div>
         </div>
       </section>

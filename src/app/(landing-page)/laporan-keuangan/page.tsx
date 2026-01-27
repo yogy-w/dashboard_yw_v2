@@ -47,8 +47,8 @@ export default function LaporanKeuanganPage() {
       {/* 1. HERO SECTION */}
       <section className="py-5" style={{ backgroundColor: '#064e3b', paddingTop: '140px !important' }}>
         <div className="container py-4 text-center text-white">
-          <h1 className="fw-bold display-5">Laporan Keuangan</h1>
-          <p className="opacity-75 lead">Rincian Pemasukan & Pengeluaran Kas Masjid</p>
+          <h1 className="display-4 fw-bold text-white uppercase ls-lg">Laporan Keuangan</h1>
+          <p className="lead text-white-50">Rincian Pemasukan & Pengeluaran Kas Masjid</p>
           <div className="bg-warning mx-auto mt-3" style={{ width: '80px', height: '4px', borderRadius: '2px' }}></div>
         </div>
       </section>
